@@ -1,0 +1,3 @@
+function triangle(){
+    return "success";
+}
