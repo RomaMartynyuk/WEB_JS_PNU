@@ -9,17 +9,31 @@ function generateNumbers(count, min = 0, max = 100) {
 const arr = generateNumbers(100, 1, 1000);
 console.log("Started array: " + arr);
 
-let newArr = bubbleSort(arr.slice(), "desc");
+let newArr = sortArray.bubbleSort(arr.slice(), "desc");
 console.log(newArr);
 
-let newArrSort1 = selectionSort(arr.slice(), "desc");
+let newArrSort1 = sortArray.selectionSort(arr.slice(), "desc");
 console.log(newArrSort1);
 
-let newArrSort2 = insertionSort(arr.slice(), "desc");
+let newArrSort2 = sortArray.insertionSort(arr.slice(), "desc");
 console.log(newArrSort2);
 
-let newArrSort3 = shellSort(arr.slice(), "desc");
+let newArrSort3 = sortArray.shellSort(arr.slice(), "desc");
 console.log(newArrSort3);
 
-let newArrSort4 = quickSort(arr.slice(), "desc");
-console.log(newArrSort4);
+console.log(sortArray.quickSort(arr.slice()));
+
+arr[150] = 999;
+console.log(arr);
+console.log(sortArray.quickSort(arr.slice()));
+console.log(sortArray.selectionSort(arr.slice()));
+console.log(sortArray.insertionSort(arr.slice()));
+console.log(sortArray.bubbleSort(arr.slice()));
+console.log(sortArray.shellSort(arr.slice()));
+
+console.log("По спаданню:");
+console.log(sortArray.quickSort(arr.slice(), "desc"));
+console.log(sortArray.selectionSort(arr.slice(),"desc"));
+console.log(sortArray.insertionSort(arr.slice(),"desc"));
+console.log(sortArray.bubbleSort(arr.slice(),"desc"));
+console.log(sortArray.shellSort(arr.slice(),"desc"));
