@@ -151,12 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //win
-    winButton.addEventListener('click', () => {
+    /*winButton.addEventListener('click', () => {
         for (let i = 0; i < board.length; i++) {
             board[i] = true;
         }
         checkWin();
-    });
+    });*/
 
     restartButton.addEventListener('click', initializeGame);
 
