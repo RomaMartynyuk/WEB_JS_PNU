@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //board = [];
 
             for (let i = 0; i < 5; i++) {
-                for (let j = 0; j < 5; i++){
+                for (let j = 0; j < 5; j++){
                     board.push(matrix[i][j]);
                     console.log(matrix[i][j]);
                 }
@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
             generateBoard();
             isPlaying = true;
             startTimer();
-        })
+
+        })   
     }
 
     function generateBoard() {
