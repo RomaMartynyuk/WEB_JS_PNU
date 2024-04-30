@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
 
@@ -44,4 +44,5 @@ body {
     padding: 10px 20px;
     border: 1px solid #ccc;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
 }

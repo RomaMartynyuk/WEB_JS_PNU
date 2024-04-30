@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const clicksDisplay = document.getElementById('clicks');
     const timerDisplay = document.getElementById('timer');
     const restartButton = document.getElementById('restart');
+    const requireStepsDisplay = document.getElementById('requireSteps');
 
     //win button
     const winButton = document.getElementById('win-button');
@@ -18,13 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(timerInterval);
         timerDisplay.textContent = '00:00';
 
+        let gameLayouts = ['GameLayouts/game1.json', 'GameLayouts/game2.json', 'GameLayouts/game3.json'];
+        let randomIndex = Math.floor(Math.random() * gameLayouts.length);
+        console.log(gameLayouts[randomIndex]);
+
         /*for (let i = 0; i < 25; i++) {
             board.push(Math.random() < 0.5);
         }*/
-        $ajaxUtils.sendGetRequest('game1.json', function(request){
+        $ajaxUtils.sendGetRequest(gameLayouts[randomIndex], function(request){
             
             let matrix = request.matrix;
-            //board = [];
+            let reqSteps = request.reqSteps;
+            board = [];
 
             for (let i = 0; i < 5; i++) {
                 for (let j = 0; j < 5; j++){
@@ -32,6 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log(matrix[i][j]);
                 }
             }
+
+            requireStepsDisplay.textContent = reqSteps;
 
             generateBoard();
             isPlaying = true;
