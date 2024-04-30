@@ -18,10 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(timerInterval);
         timerDisplay.textContent = '00:00';
 
-        board = [];
-        for (let i = 0; i < 25; i++) {
+        /*for (let i = 0; i < 25; i++) {
             board.push(Math.random() < 0.5);
-        }
+        }*/
+        $ajaxUtils.sendGetRequest('game1.json', function(request){
+            
+            let matrix = request.matrix;
+            board = [];
+
+            for (let i = 0; i < 5; i++) {
+                for (let j = 0; j < 5; i++){
+                    board.push(matrix[i, j]);
+                    console.log(matrix[i][j]);
+                }
+            }
+        })
 
         generateBoard();
         isPlaying = true;
