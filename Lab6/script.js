@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let clicks = 0;
     let timerInterval;
     let isPlaying = false;
+    let reqSteps;
 
     function initializeGame() {
         clicks = 0;
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         $ajaxUtils.sendGetRequest(gameLayouts[randomIndex], function(request){
             
             let matrix = request.matrix;
-            let reqSteps = request.reqSteps;
+            reqSteps = request.reqSteps;
             board = [];
 
             for (let i = 0; i < 5; i++) {
