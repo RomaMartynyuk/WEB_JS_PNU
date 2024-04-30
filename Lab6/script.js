@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const requireStepsDisplay = document.getElementById('requireSteps');
 
     //win button
-    const winButton = document.getElementById('win-button');
+    //const winButton = document.getElementById('win-button');
 
     let board = [];
     let clicks = 0;
@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
         $ajaxUtils.sendGetRequest(gameLayouts[randomIndex], function(request){
             
             let matrix = request.matrix;
-            reqSteps = request.reqSteps;
+            reqSteps = request.minimumStepsRequired;
             board = [];
 
             for (let i = 0; i < 5; i++) {
                 for (let j = 0; j < 5; j++){
                     board.push(matrix[i][j]);
-                    console.log(matrix[i][j]);
+                    //console.log(matrix[i][j]);
                 }
             }
 
