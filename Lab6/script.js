@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = 0; i < 5; i++) {
                 for (let j = 0; j < 5; i++){
-                    board.push(matrix[i, j]);
+                    board.push(matrix[i][j]);
                     console.log(matrix[i][j]);
                 }
             }
