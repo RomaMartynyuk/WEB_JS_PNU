@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         $ajaxUtils.sendGetRequest('game1.json', function(request){
             
             let matrix = request.matrix;
-            board = [];
+            //board = [];
 
             for (let i = 0; i < 5; i++) {
                 for (let j = 0; j < 5; i++){
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log(matrix[i][j]);
                 }
             }
-        })
 
-        generateBoard();
-        isPlaying = true;
-        startTimer();
+            generateBoard();
+            isPlaying = true;
+            startTimer();
+        })
     }
 
     function generateBoard() {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cell.dataset.index = i;
             cell.addEventListener('click', handleClick);
 
-            if (board[i]) {
+            if (board[i] === 1) {
                 cell.classList.add('on');
             } else {
                 cell.classList.add('off');
