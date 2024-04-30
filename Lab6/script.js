@@ -39,8 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            requireStepsDisplay.textContent = reqSteps;
-
             generateBoard();
             isPlaying = true;
             startTimer();
@@ -50,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generateBoard() {
         gameboard.innerHTML = '';
+        requireStepsDisplay.textContent = reqSteps;
 
         for (let i = 0; i < 25; i++) {
             const cell = document.createElement('div');
