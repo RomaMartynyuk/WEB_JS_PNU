@@ -23,15 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
         timerDisplay.textContent = '00:00';
 
         let gameLayouts = ['GameLayouts/game1.json', 'GameLayouts/game2.json', 'GameLayouts/game3.json'];
-        let randomIndex;
+        let randomIndex = Math.floor(Math.random() * gameLayouts.length);;
 
-        if(toRestart) {
-            randomIndex = Math.floor(Math.random() * gameLayouts.length);
-            console.log(gameLayouts[randomIndex]);
-        } else if(!toRestart) {
+        if(!toRestart) {
             randomIndex = currentLevel;
         }
 
+        currentLevel = randomIndex;
         /*for (let i = 0; i < 25; i++) {
             board.push(Math.random() < 0.5);
         }*/
@@ -53,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
             startTimer();
 
         })
-        currentLevel = randomIndex;
     }
 
     function generateBoard() {
