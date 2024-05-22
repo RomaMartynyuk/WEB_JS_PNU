@@ -14,22 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerInterval;
     let isPlaying = false;
     let reqSteps;
-    let currentLevel;
 
-    function initializeGame(toRestart) {
+    function initializeGame() {
         clicks = 0;
         clicksDisplay.textContent = 0;
         clearInterval(timerInterval);
         timerDisplay.textContent = '00:00';
 
         let gameLayouts = ['GameLayouts/game1.json', 'GameLayouts/game2.json', 'GameLayouts/game3.json'];
-        let randomIndex = Math.floor(Math.random() * gameLayouts.length);;
+        let randomIndex = Math.floor(Math.random() * gameLayouts.length);
+        console.log(gameLayouts[randomIndex]);
 
-        if(!toRestart) {
-            randomIndex = currentLevel;
-        }
-
-        currentLevel = randomIndex;
         /*for (let i = 0; i < 25; i++) {
             board.push(Math.random() < 0.5);
         }*/
@@ -50,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             isPlaying = true;
             startTimer();
 
-        })
+        })   
     }
 
     function generateBoard() {
@@ -164,8 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkWin();
     });*/
 
-    restartButton.addEventListener('click', initializeGame(true));
-    replayButton.addEventListener('click', initializeGame(false));
+    restartButton.addEventListener('click', initializeGame);
 
-    initializeGame(true);
+    initializeGame();
 });
