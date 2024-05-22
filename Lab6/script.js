@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkWin();
     });*/
 
-    restartButton.addEventListener('click', alert("working!!!"));
+    restartButton.addEventListener('click', initializeGame);
 
     initializeGame();
 });
