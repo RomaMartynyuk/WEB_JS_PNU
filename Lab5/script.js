@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let gameDiv = document.getElementById('game');
     let menuDiv = document.getElementById('controls');
     let showSquare = document.getElementById('showColorSquare');
+    let timerDisplay = document.getElementById('timer');
+    let startTime;
+    let timerInterval;
 
     function getRandomPosition() {
         let posX = Math.floor(Math.random() * (window.innerWidth - 100));
@@ -18,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function moveSquare() {
-        if(!isPlaying){
+        if (!isPlaying) {
             return;
         }
         let pos = getRandomPosition();
@@ -32,13 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function gameEnded() {
+        clearInterval(timerInterval);
         alert('Game over! Your score: ' + score);
         score = 0;
         scoreDisplay.textContent = 'Score: ' + score;
         menuDiv.style.display = 'block';
         gameDiv.style.display = 'none';
     }
-  
+
     function getTimeout() {
         let difficulty = difficultySelect.value;
         if (difficulty === 'easy') {
@@ -56,26 +60,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function updateTimer() {
+        let elapsed = Date.now() - startTime;
+        let seconds = Math.floor(elapsed / 1000);
+        let milliseconds = elapsed % 1000;
+        timerDisplay.textContent = `${String(seconds).padStart(2, '0')}:${String(milliseconds).padStart(2, '0')}`;
+    }
+
     colorSelect.addEventListener('click', () => {
         showSquare.style.backgroundColor = colorSelect.value;
     });
-  
+
     square.addEventListener('click', () => {
         score++;
         scoreDisplay.textContent = 'Score: ' + score;
         clearTimeout(timer);
+        clearInterval(timerInterval);
+        startTime = Date.now();
+        timerInterval = setInterval(updateTimer, 5);
+        timer.textContent = "00:00";
         moveSquare();
     });
-  
+
     startBtn.addEventListener('click', () => {
         score = 0;
         scoreDisplay.textContent = 'Score: ' + score;
         isPlaying = true;
         gameDiv.style.display = 'block';
         menuDiv.style.display = 'none';
+        startTime = Date.now();
+        timerInterval = setInterval(updateTimer, 5);
         moveSquare();
     });
 
     moveSquare();
     showSquare.style.backgroundColor = colorSelect.value;
-  });
+});
