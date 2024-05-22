@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerDisplay = document.getElementById('timer');
     const restartButton = document.getElementById('restart');
     const requireStepsDisplay = document.getElementById('requireSteps');
-    const replayButton = document.getElementById('replay');
 
     //win button
     //const winButton = document.getElementById('win-button');
@@ -159,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         checkWin();
     });*/
 
-    restartButton.addEventListener('click', initializeGame);
+    restartButton.addEventListener('click', alert("working!!!"));
 
     initializeGame();
 });
