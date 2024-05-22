@@ -40,7 +40,7 @@ body {
     font-weight: bold;
 }
 
-#restart {
+#restart, #replay{
     padding: 10px 20px;
     border: 1px solid #ccc;
     cursor: pointer;

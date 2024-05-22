@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerDisplay = document.getElementById('timer');
     const restartButton = document.getElementById('restart');
     const requireStepsDisplay = document.getElementById('requireSteps');
+    const replayButton = document.getElementById('replay');
 
     //win button
     //const winButton = document.getElementById('win-button');
@@ -13,16 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerInterval;
     let isPlaying = false;
     let reqSteps;
+    let currentLevel;
 
-    function initializeGame() {
+    function initializeGame(toRestart) {
         clicks = 0;
         clicksDisplay.textContent = 0;
         clearInterval(timerInterval);
         timerDisplay.textContent = '00:00';
 
         let gameLayouts = ['GameLayouts/game1.json', 'GameLayouts/game2.json', 'GameLayouts/game3.json'];
-        let randomIndex = Math.floor(Math.random() * gameLayouts.length);
-        console.log(gameLayouts[randomIndex]);
+        let randomIndex;
+
+        if(toRestart) {
+            randomIndex = Math.floor(Math.random() * gameLayouts.length);
+            console.log(gameLayouts[randomIndex]);
+        } else if(!toRestart) {
+            randomIndex = currentLevel;
+        }
 
         /*for (let i = 0; i < 25; i++) {
             board.push(Math.random() < 0.5);
@@ -44,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
             isPlaying = true;
             startTimer();
 
-        })   
+        })
+        currentLevel = randomIndex;
     }
 
     function generateBoard() {
@@ -158,7 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
         checkWin();
     });*/
 
-    restartButton.addEventListener('click', initializeGame);
+    restartButton.addEventListener('click', initializeGame(true));
+    replayButton.addEventListener('click', initializeGame(false));
 
-    initializeGame();
+    initializeGame(true);
 });

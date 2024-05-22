@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let posY = Math.floor(Math.random() * (window.innerHeight - 100));
         return [posX, posY];
     }
-  
+
     function moveSquare() {
         if(!isPlaying){
             return;
@@ -79,4 +79,3 @@ document.addEventListener('DOMContentLoaded', function() {
     moveSquare();
     showSquare.style.backgroundColor = colorSelect.value;
   });
-  
