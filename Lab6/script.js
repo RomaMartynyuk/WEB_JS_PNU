@@ -162,8 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
         checkWin();
     });*/
 
-    restartButton.addEventListener('click', initializeGame(true));
-    replayButton.addEventListener('click', initializeGame(false))
+    restartButton.addEventListener('click', () => initializeGame(true));
+    replayButton.addEventListener('click', () => initializeGame(false))
 
     initializeGame(true);
 });
