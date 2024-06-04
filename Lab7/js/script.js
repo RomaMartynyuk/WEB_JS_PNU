@@ -3,7 +3,7 @@
 
     const homeHtml = "snippets/home-snippets.html";
     const categoryHtml = "snippets/category-el-snippets.html";
-    const categoryItemsTitleHtml = "snippets/category-item-title.html";
+    const categoryItemsTitleHtml = "snippets/category-items-title.html";
     const categoryItemHtml = "snippets/category-item.html";
 
     const categoriesJson = "data/categories.json"
