@@ -1,9 +1,10 @@
-<div class="col-4 category" onclick="$gi.loadCategoriesItems('{{short_name}}');">
+<div class="col-4 category">
     <div class="card shadow-sm">
         <img src="images/categories/{{short_name}}.png" width="200px" height="200px">
         <div class="card-body">
             <h4 class="card-title fw-bold">{{full_name}}</h4>
             <p class="card-text">{{notes}}</p>
+            <button class="btn btn-dark" onclick="$gi.loadCategoriesItems('{{short_name}}');">Перейти</button>
         </div>
     </div>
 </div>
