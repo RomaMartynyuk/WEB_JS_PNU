@@ -3,8 +3,11 @@
 
     const homeHtml = "snippets/home-snippets.html";
     const categoryHtml = "snippets/category-el-snippets.html";
+    const categoryItemsTitleHtml = "snippets/category-item-title.html";
+    const categoryItemHtml = "snippets/category-item.html";
 
     const categoriesJson = "data/categories.json"
+    const catalogItemsUrl = "data/catalog/"
 
     document.addEventListener("DOMContentLoaded", function(event) {
         loadHomeHtml();
@@ -56,7 +59,7 @@
 
     function buildCategoriesViewHtml (categories, categoryHtml) {
         
-        let finalHtml = "<div class='album py-5 bg-body-tertiary'><div class='container'><div class='row justify-content-evenly p-3 g-3'>";
+        let finalHtml = "<div class='album py-5 bg-body-tertiary'><div class='container'><div class='row justify-content-evenly p-4 g-4'>";
 
         for (let i = 0; i < categories.length; i++) {
             let html = categoryHtml;
@@ -66,6 +69,53 @@
             html = insertProperty(html, "full_name", full_name);
             html = insertProperty(html, "short_name", short_name);
             html = insertProperty(html, "notes", notes);
+            finalHtml += html;
+        }
+
+        finalHtml += "</div></div></div>";
+        return finalHtml;
+    }
+
+    gi.loadCategoriesItems = function (categoryShort) {
+        $ajaxUtils.sendGetRequest(
+            catalogItemsUrl + categoryShort + ".json",
+            showCategoryItemsHtml);
+    };
+
+    function showCategoryItemsHtml (categoryCatalogItems) {
+        $ajaxifyJS.sendGetRequest(
+            categoryItemsTitleHtml,
+            function (categoryItemsTitleHtml) {
+                $ajaxifyJS.sendGetRequest(
+                    categoryItemHtml,
+                    function (categoryItemHtml) {
+                        const categoryItemViewHtml = buildCategoryItemsViewHtml(categoryCatalogItems, categoryItemsTitleHtml, categoryItemHtml);
+                        insertHtml("#main", categoryItemViewHtml);
+                    },
+                    false);
+            },
+            false);
+    }
+
+    function buildCategoryItemsViewHtml (categoryCatalogItems, categoryItemsTitleHtml, categoryItemHtml) {
+        
+        categoryItemsTitleHtml = insertProperty(categoryItemsTitleHtml, "full_name", categoryCatalogItems.category.full_name);
+
+        let finalHtml = categoryItemsTitleHtml;
+        finalHtml += "<div class='album py-5 bg-body-tertiary'><div class='container'><div class='row justify-content-evenly p-4 g-4'>";
+
+        const categoryItems = categoryCatalogItems.catalog_items;
+        const catShortName = categoryCatalogItems.category.short_name;
+
+        for (let i = 0; i < categoryItems.length; i++) {
+            
+            let html = categoryItemHtml;
+            html = insertProperty(html, "catShortName", catShortName);
+            html = insertProperty(html, "short_name", categoryItems[i].short_name);
+            html = insertProperty(html, "full_name", categoryItems[i].full_name);
+            html = insertProperty(html, "company", categoryItems[i].author);
+            html = insertProperty(html, "description", categoryItems[i].description);
+            html = insertProperty(html, "price", categoryItems[i].price); 
             finalHtml += html;
         }
 
