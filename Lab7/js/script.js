@@ -113,7 +113,7 @@
             html = insertProperty(html, "catShortName", catShortName);
             html = insertProperty(html, "short_name", categoryItems[i].short_name);
             html = insertProperty(html, "full_name", categoryItems[i].full_name);
-            html = insertProperty(html, "company", categoryItems[i].author);
+            html = insertProperty(html, "company", categoryItems[i].company);
             html = insertProperty(html, "description", categoryItems[i].description);
             html = insertProperty(html, "price", categoryItems[i].price); 
             finalHtml += html;
