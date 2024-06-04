@@ -1,0 +1,40 @@
+{
+    "catalog_items":
+    [{
+      "id": 21,
+      "full_name": "Forza Horizon 5",    
+      "short_name": "ForzaHorizon5",
+      "company": "Playground Games",
+      "description": "Forza Horizon 5 — відеогра жанру аркадного перегонового симулятора. Розробником виступає компанія Playground Games, а як видавець — Xbox Game Studios.",
+      "price": 43.59
+    },
+    {
+      "id": 22,
+      "full_name": "F1 24",
+      "short_name": "F124",
+      "company": "Codemasters",
+      "description": "F1 24 — це гоночна відеогра, розроблена Codemasters і видана EA Sports. Це сімнадцятий запис у серії F1 від Codemasters. Він володіє ліцензією на проведення чемпіонатів Формули-1 і Формули-2 2024 року.",    
+      "price": 59.99
+    },
+    {
+      "id": 23,
+      "full_name": "The Crew 2",
+      "short_name": "TheCrew2",
+      "company": "Ubisoft",
+      "description": "The Crew 2 — багатокористувацька перегонова відеогра розроблена Ubisoft Ivory Tower і видана Ubisoft для PlayStation 4, Windows, Xbox One і Google Stadia 29 червня 2018 року.",
+      "price": 38.76
+    },
+    {
+      "id": 24,
+      "full_name": "Gran Turismo Sport",
+      "short_name": "GTSport",
+      "company": "Polyphony Digital",
+      "description": "Gran Turismo Sport — гоночна відеогра, розроблена компанією Polyphony Digital і видана Sony для PlayStation 4. Вона була анонсована на Paris Games Week 2015.",
+      "price": 48.76
+    }], 
+    "category": {
+      "short_name": "racing",
+      "full_name": "Гонки",
+      "special_instructions": "..."
+    }
+  }

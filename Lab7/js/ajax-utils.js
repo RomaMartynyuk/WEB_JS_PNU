@@ -11,8 +11,7 @@
         }
     }
 
-    ajaxUtils.sendGetRequest = 
-        function(requestUrl, responseHandler, isJsonResponse){
+    ajaxUtils.sendGetRequest = function(requestUrl, responseHandler, isJsonResponse){
             const request = getRequestObject();
             request.onreadystatechange =
                 function() {

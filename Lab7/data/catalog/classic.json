@@ -1,0 +1,40 @@
+{
+    "catalog_items":
+    [{
+      "id": 11,
+      "full_name": "Skyrim",    
+      "short_name": "Skyrim",
+      "company": "Bethesda",
+      "description": "The Elder Scrolls V: Skyrim — рольова відеогра, розроблена Bethesda Game Studios і опублікована Bethesda Softworks. Це п'ята гра в серії The Elder Scrolls, попередньою була The Elder Scrolls IV: Oblivion.",
+      "price": 29.00
+    },
+    {
+      "id": 12,
+      "full_name": "PAC-MAN",
+      "short_name": "PacMan",
+      "company": "Atari",
+      "description": "Pac-Man — відеогра, яка вперше вийшла в 1980 році в Японії. Її випуск змінив всю індустрію відеоігор свого часу і вплинув на різні сфери культури.",    
+      "price": 2.99
+    },
+    {
+      "id": 13,
+      "full_name": "Quake",
+      "short_name": "Quake",
+      "company": "id Software",
+      "description": "Quake здійснила прорив у 3D-технологіях, використовуючи текстуровані полігональні моделі замість спрайтів, повністю реалізувавши тривимірний світ замість двовимірної карти з інформацією про висоту.",
+      "price": 5.67
+    },
+    {
+      "id": 14,
+      "full_name": "Warcraft",
+      "short_name": "Warcraft",
+      "company": "Blizzard",
+      "description": "WarCraft — серія фентезійних відеоігор компанії Blizzard Entertainment. Початково відома як серія стратегій у реальному часі. Згодом вона поповнилася MMORPG і картковою відеогрою.",
+      "price": 7.88
+    }], 
+    "category": {
+      "short_name": "classic",
+      "full_name": "Класика",
+      "special_instructions": "..."
+    }
+  }

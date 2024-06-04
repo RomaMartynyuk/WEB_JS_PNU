@@ -1,0 +1,40 @@
+{
+    "catalog_items":
+    [{
+      "id": 31,
+      "full_name": "Dark Souls III",    
+      "short_name": "DarkSouls3",
+      "company": "FromSoftware",
+      "description": "Dark Souls III — рольова відеогра, розроблена FromSoftware і видана Bandai Namco Entertainment для PlayStation 4, Xbox One і Microsoft Windows.",
+      "price": 26.89
+    },
+    {
+      "id": 32,
+      "full_name": "The Witcher 3: Wild Hunt",
+      "short_name": "TheWitcher3",
+      "company": "CD Project RED",
+      "description": "The Witcher 3: Wild Hunt — комп'ютерна гра у стилі action/RPG, розроблена польською компанією CD Projekt RED за мотивами серії романів «Відьмак» письменника Анджея Сапковського.",    
+      "price": 56.34
+    },
+    {
+      "id": 33,
+      "full_name": "Diablo III",
+      "short_name": "Diablo3",
+      "company": "Blizzard",
+      "description": "Diablo III — відеогра жанрів hack and slash і action RPG та третя частина серії Diablo, розроблена компанією Blizzard Entertainment та випущена нею 15 травня 2012 року для Microsoft Windows і Mac OS X.",
+      "price": 39.78
+    },
+    {
+      "id": 34,
+      "full_name": "Assassin's Creed Valhalla",
+      "short_name": "ACValhalla",
+      "company": "Ubisoft",
+      "description": "Assassin's Creed Valhalla — багатоплатформна відеогра жанру рольового бойовика та стелс, розроблена компанією «Ubisoft» та видана 17 листопада 2020 року. Є дванадцятою грою в серії відеоігор Assassin's Creed.",
+      "price": 58.98
+    }], 
+    "category": {
+      "short_name": "rpg",
+      "full_name": "РПГ",
+      "special_instructions": "..."
+    }
+  }

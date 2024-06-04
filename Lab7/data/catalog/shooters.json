@@ -1,0 +1,40 @@
+{
+    "catalog_items":
+    [{
+      "id": 41,
+      "full_name": "Call of Duty: Modern Warfare II",    
+      "short_name": "CoDMW2",
+      "company": "Infinity Ward",
+      "description": "Call of Duty: Modern Warfare II — відеогра в жанрі шутера від першої особи, розроблена Infinity Ward і видана Activision для Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One та Xbox Series X/S у жовтні 2022 року.",
+      "price": 39.10
+    },
+    {
+      "id": 42,
+      "full_name": "Battlefield 1",
+      "short_name": "Battlefield1",
+      "company": "EA DICE",
+      "description": "Battlefield 1 — відеогра, шутер від першої особи, розроблена EA DICE і видана Electronic Arts. Battlefield 1 — п'ятнадцята частина в серії Battlefield.",    
+      "price": 41.99
+    },
+    {
+      "id": 43,
+      "full_name": "Doom Eternal",
+      "short_name": "DoomEternal",
+      "company": "id Software",
+      "description": "Doom Eternal — відеогра жанру шутера від першої особи, розроблена компанією id Software та видана Bethesda Softworks 20 березня 2020 року для Windows, PlayStation 4 та Xbox One.",
+      "price": 54.67
+    },
+    {
+      "id": 14,
+      "full_name": "Wolfenstein II: The New Colossus",
+      "short_name": "Wolfenstein2",
+      "company": "MachineGames",
+      "description": "Wolfenstein II: The New Colossus — відеогра жанру шутера від першої особи, розроблена MachineGames і видана Bethesda Softworks 27 жовтня 2017 року для Windows, PlayStation 4 і Xbox One.",
+      "price": 39.88
+    }], 
+    "category": {
+      "short_name": "shooters",
+      "full_name": "Шутери",
+      "special_instructions": "..."
+    }
+  }
