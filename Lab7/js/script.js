@@ -1,8 +1,10 @@
 (function (global){
-    const bh = {};
+    const gi = {};
 
     const homeHtml = "snippets/home-snippets.html";
     const categoryHtml = "snippets/category-snippets.html";
+
+    const categoriesJson = "data/categories.json"
 
     document.addEventListener("DOMContentLoaded", function(event) {
         loadHomeHtml();
@@ -13,6 +15,18 @@
         targetElem.innerHTML = html;
     }
 
+    const showLoading = function (selector) {
+        let html = "<div class='text-center'>";
+        html += "<img src='images/ajax-loader.gif'></div>";
+        insertHtml(selector, html);
+    }
+
+    const insertProperty = function (string, propName, propValue) {
+        const propToReplace = "{{" + propName + "}}";
+        string = string.replace(new RegExp(propToReplace, "g"), propValue);
+        return string;
+    }
+
     loadHomeHtml = function(){
         $ajaxUtils.sendGetRequest(
             homeHtml,
@@ -21,7 +35,40 @@
             },
             false
         )
+    };
+
+    gi.loadCatalogCategories = function () {
+        $ajaxUtils.sendGetRequest(
+            categoriesJson,
+            showCategoriesHtml);
+    };
+
+    function showCategoriesHtml (categories) {
+        $ajaxUtils.sendGetRequest(
+            categoryHtml,
+            function (categoryHtml) {
+                const categoriesViewHtml = buildCategoriesViewHtml(categories, categoryHtml);
+                insertHtml("#main", categoriesViewHtml);
+            },
+            false);
     }
 
-    global.$bh = bh;
+    function buildCategoriesViewHtml (categories, categoryHtml) {
+        
+        let finalHtml = "<div class='catalog'>";
+
+        for (let i = 0; i < categories.length; i++) {
+            let html = categoryHtml;
+            const full_name = "" + categories[i].full_name;
+            const short_name = categories[i].short_name;
+            html = insertProperty(html, "full_name", full_name);
+            html = insertProperty(html, "short_name", short_name);
+            finalHtml += html;
+        }
+
+        finalHtml += "</div>";
+        return finalHtml;
+    }
+
+    global.$gi = gi;
 })(window)
