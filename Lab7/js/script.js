@@ -83,10 +83,10 @@
     };
 
     function showCategoryItemsHtml (categoryCatalogItems) {
-        $ajaxifyJS.sendGetRequest(
+        $ajaxUtils.sendGetRequest(
             categoryItemsTitleHtml,
             function (categoryItemsTitleHtml) {
-                $ajaxifyJS.sendGetRequest(
+                $ajaxUtils.sendGetRequest(
                     categoryItemHtml,
                     function (categoryItemHtml) {
                         const categoryItemViewHtml = buildCategoryItemsViewHtml(categoryCatalogItems, categoryItemsTitleHtml, categoryItemHtml);
