@@ -14,7 +14,7 @@
     }
 
     loadHomeHtml = function(){
-        $ajax-utils.sendGetRequest(
+        $ajaxUtils.sendGetRequest(
             homeHtml,
             function(responseText){
                 document.querySelector("#main").innerHTML = responseText;
