@@ -3,6 +3,7 @@
 
     const homeHtml = "snippets/home-snippets.html";
     const categoryHtml = "snippets/category-snippets.html";
+    const categoryHtmlEl = "snippets/category-el-snippets.html";
 
     const categoriesJson = "data/categories.json"
 
@@ -47,7 +48,8 @@
         $ajaxUtils.sendGetRequest(
             categoryHtml,
             function (categoryHtml) {
-                const categoriesViewHtml = buildCategoriesViewHtml(categories, categoryHtml);
+                insertHtml("#main", categoryHtml);
+                const categoriesViewHtml = buildCategoriesViewHtml(categories, categoryHtmlEl);
                 insertHtml("#main", categoriesViewHtml);
             },
             false);
@@ -61,8 +63,10 @@
             let html = categoryHtml;
             const full_name = "" + categories[i].full_name;
             const short_name = categories[i].short_name;
+            const notes = categories[i].notes;
             html = insertProperty(html, "full_name", full_name);
             html = insertProperty(html, "short_name", short_name);
+            html = insertProperty(html, "notes", notes);
             finalHtml += html;
         }
 
