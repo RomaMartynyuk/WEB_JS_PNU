@@ -2,8 +2,7 @@
     const gi = {};
 
     const homeHtml = "snippets/home-snippets.html";
-    const categoryHtml = "snippets/category-snippets.html";
-    const categoryHtmlEl = "snippets/category-el-snippets.html";
+    const categoryHtml = "snippets/category-el-snippets.html";
 
     const categoriesJson = "data/categories.json"
 
@@ -48,8 +47,7 @@
         $ajaxUtils.sendGetRequest(
             categoryHtml,
             function (categoryHtml) {
-                insertHtml("#main", categoryHtml);
-                const categoriesViewHtml = buildCategoriesViewHtml(categories, categoryHtmlEl);
+                const categoriesViewHtml = buildCategoriesViewHtml(categories, categoryHtml);
                 insertHtml("#main", categoriesViewHtml);
             },
             false);
