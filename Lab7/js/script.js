@@ -12,6 +12,7 @@
     document.addEventListener("DOMContentLoaded", function(event) {
         loadHomeHtml();
         document.getElementById("navHomeButton").addEventListener("click", loadHomeHtml);
+        document.getElementById("navLogo").addEventListener("click", window.location.reload());
     });
 
     const insertHtml = function (selector, html) {
