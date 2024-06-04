@@ -8,6 +8,7 @@
 
     document.addEventListener("DOMContentLoaded", function(event) {
         loadHomeHtml();
+        document.getElementById("navHomeButton").addEventListener("click", loadHomeHtml);
     });
 
     const insertHtml = function (selector, html) {
@@ -55,7 +56,7 @@
 
     function buildCategoriesViewHtml (categories, categoryHtml) {
         
-        let finalHtml = "<div class='catalog'>";
+        let finalHtml = "<div class='album py-5 bg-body-tertiary'><div class='container'><div class='row justify-content-evenly p-3 g-3'>";
 
         for (let i = 0; i < categories.length; i++) {
             let html = categoryHtml;
@@ -68,7 +69,7 @@
             finalHtml += html;
         }
 
-        finalHtml += "</div>";
+        finalHtml += "</div></div></div>";
         return finalHtml;
     }
 
