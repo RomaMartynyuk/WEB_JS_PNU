@@ -123,5 +123,16 @@
         return finalHtml;
     }
 
+    gi.loadRandomCategory = function() {    
+        $ajaxUtils.sendGetRequest(
+            categoriesJson,
+            function(categories) {
+                const randomIndex = Math.floor(Math.random() * categories.length);
+                const randomCategory = categories[randomIndex];
+                gi.loadCategoriesItems(randomCategory.short_name);
+            }
+        );
+    };
+
     global.$gi = gi;
 })(window)
